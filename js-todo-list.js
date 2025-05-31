@@ -1,17 +1,8 @@
-// Simple To-Do List Manager (JavaScript)
-// Author: [Your Name]
-// Description: A basic script to add or remove items from a to-do list using prompt inputs.
-
 let todoList = ["eat", "sleep", "code"];
 
 console.log("📝 Welcome to the To-Do List App!");
 console.log("Current List:", todoList);
 
-// Get user input
-let item = prompt("Enter your item:");
-let operation = prompt("Enter your operation (add/remove):");
-
-// Function to update the to-do list
 function updateList(item, operation) {
     if (operation === "add") {
         todoList.push(item);
@@ -30,8 +21,18 @@ function updateList(item, operation) {
     }
 }
 
-// Call the function
+let item = prompt("Enter your item:");
+let operation = prompt("Enter your operation (add/remove):");
 updateList(item, operation);
 
-// Print the updated list
 console.log("📋 Updated To-Do List:", todoList);
+
+let doitagain = prompt("Wanna do it again? (yes/no):");
+while (doitagain === "yes") {
+    item = prompt("Enter your item:");
+    operation = prompt("Enter your operation (add/remove):");
+    updateList(item, operation);
+    console.log("📋 Updated To-Do List:", todoList);
+    doitagain = prompt("Wanna do it again? (yes/no):"); 
+}
+
